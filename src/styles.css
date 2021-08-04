@@ -4,18 +4,27 @@
 }
 .App {
   font-family: sans-serif;
+  max-width: 480px;
+  margin: 0 auto;
 }
-
 .page--header {
+  background: rgb(106, 164, 211);
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  max-width: 380px;
-  margin: 0 auto;
-  padding: 7px;
+  margin-bottom: 10px;
 }
 .visit--card {
   padding: 7px;
   border: 1px solid black;
   margin-bottom: 5px;
+}
+.header--selectors {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.header--select {
+  padding: 10px 5px;
+  width: 133px;
+  text-align: right;
 }

@@ -3,7 +3,7 @@ import React from "react";
 const Selector = (props) => {
   return (
     <div>
-      <select onChange={props.select}>
+      <select className="header--select" onChange={props.select}>
         <option defaultValue value="all">
           Status
         </option>
