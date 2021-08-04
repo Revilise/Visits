@@ -1,17 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
+
 import Cencel from "./Selectors/Cencel";
 import ComplaintSelector from "./Selectors/Complaint";
 import DoctorSelector from "./Selectors/Doctor";
 import StatusSelector from "./Selectors/Status";
 
 class Header extends React.Component {
-  componentDidMount() {
-    this.props.clearParamsArray(this.props.visits, "status");
-    this.props.clearParamsArray(this.props.visits, "doctor");
-    this.props.clearParamsArray(this.props.visits, "complaint");
-  }
-  componentDidUpdate() {
+  filter() {
     let status = this.props.selectors.selected_status;
     let doctor = this.props.selectors.selected_doctor;
     let comp = this.props.selectors.selected_complaint;
@@ -23,6 +19,14 @@ class Header extends React.Component {
 
     this.props.setFilteredData(arr);
   }
+
+  componentDidMount() {
+    this.filter();
+  }
+  componentDidUpdate() {
+    this.filter();
+  }
+
   render() {
     return (
       <header className="page--header">
@@ -54,14 +58,6 @@ const MapStateToProps = (state) => {
 
 const MapDispatchToProps = (dispatch) => {
   return {
-    clearParamsArray: (array, param) => {
-      let array_st = [];
-      array.forEach((element) => {
-        array_st.push(element[param]);
-      });
-      let value = Array.from(new Set(array_st));
-      dispatch({ type: `set/params/${param}`, [param]: value });
-    },
     setFilteredData: (array) => {
       dispatch({ type: "set/filtered_data", array });
     },

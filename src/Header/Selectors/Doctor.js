@@ -4,12 +4,12 @@ const Selector = (props) => {
   return (
     <div>
       <select onChange={props.select}>
-        {props.options.map((elem) => (
-          <option value={`${elem}`}>{elem}</option>
-        ))}
         <option defaultValue value="all">
           Doctor
         </option>
+        {props.options.map((elem) => (
+          <option value={`${elem}`}>{elem}</option>
+        ))}
       </select>
     </div>
   );

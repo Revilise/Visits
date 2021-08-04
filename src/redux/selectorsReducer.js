@@ -3,9 +3,9 @@ const init = {
   selected_doctor: "all",
   selected_complaint: "all",
   params: {
-    status: [],
-    doctor: [],
-    complaint: []
+    status: ["A", "B", "C", "D", "E"],
+    doctor: ["Andry", "Den", "Mary", "Simon", "Klare"],
+    complaint: ["Legs", "Headache", "Travm", "Teeth"]
   }
 };
 
@@ -17,17 +17,6 @@ export default function selectorsReducer(state = init, action) {
         selected_status: "all",
         selected_doctor: "all",
         selected_complaint: "all"
-      };
-    case "set/params/status":
-      return { ...state, params: { ...state.params, status: action.status } };
-
-    case "set/params/doctor":
-      return { ...state, params: { ...state.params, doctor: action.doctor } };
-
-    case "set/params/complaint":
-      return {
-        ...state,
-        params: { ...state.params, complaint: action.complaint }
       };
 
     case "select/status":
