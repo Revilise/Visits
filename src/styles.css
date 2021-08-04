@@ -73,12 +73,21 @@
 
 .filters {
   margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.filters input {
+  font-size: 14px;
+  padding: 8px;
+  width: 110px;
+  margin-right: 10px;
 }
 .collapse {
   transition: height 0.3s ease;
 }
 .opened.filters.collapse {
-  height: 50px;
+  height: 40px;
   overflow: hidden;
 }
 .closed.collapse {

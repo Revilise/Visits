@@ -8,8 +8,11 @@ const AppointmentFilter = (props) => {
       } filters collapse`}
       isOpen={props.isOpened}
     >
-      <p>status: </p>
-      <input type="text" />
+      <input placeholder="с" type="text" />
+      <input placeholder="по" type="text" />
+      <input placeholder="client" type="text" />
+      <input type="checkbox" />
+      <label>only me</label>
     </div>
   );
 };
