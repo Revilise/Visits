@@ -8,10 +8,10 @@
   margin: 0 auto;
 }
 .page--header {
-  background: rgb(106, 164, 211);
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+  padding: 5px;
 }
 .visit--card {
   padding: 7px;
@@ -27,4 +27,61 @@
   padding: 10px 5px;
   width: 133px;
   text-align: right;
+}
+.cencel_btn {
+  padding: 5px 12px;
+}
+.menu-line-1,
+.menu-line-2,
+.menu-line-3 {
+  content: "";
+  width: 7px;
+  height: 6px;
+  background: #000;
+  display: block;
+  margin-top: 6px;
+  position: relative;
+  border-radius: 100%;
+}
+.header--menu {
+  cursor: pointer;
+  transform-origin: center;
+  padding: 0 10px;
+}
+.opened.header--menu {
+  animation: open-line 0.5s ease both;
+}
+.closed.header--menu {
+  animation: close-line 0.5s ease both;
+}
+@keyframes open-line {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+@keyframes close-line {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.filters {
+  margin-bottom: 10px;
+}
+.collapse {
+  transition: height 0.3s ease;
+}
+.opened.filters.collapse {
+  height: 50px;
+  overflow: hidden;
+}
+.closed.collapse {
+  height: 0;
+  overflow: hidden;
 }
