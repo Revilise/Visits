@@ -2,7 +2,7 @@ import Visit from "./Visit";
 
 const Visits = (props) => {
   return (
-    <div>
+    <table className="visits">
       {props.visits.map((visit) => (
         <Visit
           status={visit.status}
@@ -10,7 +10,7 @@ const Visits = (props) => {
           complaint={visit.complaint}
         />
       ))}
-    </div>
+    </table>
   );
 };
 export default Visits;

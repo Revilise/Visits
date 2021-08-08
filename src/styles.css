@@ -7,17 +7,94 @@
   max-width: 500px;
   margin: 0 auto;
 }
-
 .page--header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  max-width: 380px;
-  margin: 0 auto;
-  padding: 7px;
+  margin-bottom: 10px;
+  padding: 5px;
 }
-.visit--card {
-  padding: 7px;
-  border: 1px solid black;
-  margin-bottom: 5px;
+
+.visits {
+  width: 100%;
+  border-collapse: collapse;
+}
+.visit-row td {
+  border: 1px solid #000;
+  padding: 5px;
+}
+.header--selectors {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.header--select {
+  padding: 10px 5px;
+  width: 133px;
+  text-align: right;
+}
+.cencel_btn {
+  padding: 5px 12px;
+}
+.menu-line-1,
+.menu-line-2,
+.menu-line-3 {
+  content: "";
+  width: 7px;
+  height: 6px;
+  background: #000;
+  display: block;
+  margin-top: 6px;
+  position: relative;
+  border-radius: 100%;
+}
+.header--menu {
+  cursor: pointer;
+  transform-origin: center;
+  padding: 0 10px;
+}
+.opened.header--menu {
+  animation: open-line 0.5s ease both;
+}
+.closed.header--menu {
+  animation: close-line 0.5s ease both;
+}
+@keyframes open-line {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+@keyframes close-line {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.filters {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.filters input {
+  font-size: 14px;
+  padding: 8px;
+  width: 110px;
+  margin-right: 10px;
+}
+.collapse {
+  transition: height 0.3s ease;
+}
+.opened.filters.collapse {
+  height: 40px;
+  overflow: hidden;
+}
+.closed.collapse {
+  height: 0;
+  overflow: hidden;
 }

@@ -3,13 +3,13 @@ import React from "react";
 const Selector = (props) => {
   return (
     <div>
-      <select onChange={props.select}>
-        {props.options.map((elem) => (
-          <option value={`${elem}`}>{elem}</option>
-        ))}
+      <select className="header--select" onChange={props.select}>
         <option defaultValue value="all">
           Status
         </option>
+        {props.options.map((elem) => (
+          <option value={`${elem}`}>{elem}</option>
+        ))}
       </select>
     </div>
   );
