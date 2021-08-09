@@ -4,27 +4,32 @@ const init = {
     {
       status: "A",
       doctor: "Andry",
-      complaint: "Headache"
+      complaint: "Headache",
+      date: '12/12/2021',
     },
     {
       status: "B",
       doctor: "Mary",
-      complaint: "Travm"
+      complaint: "Travm",
+      date: '12/05/2021'
     },
     {
       status: "C",
       doctor: "Den",
-      complaint: "Headache"
+      complaint: "Headache",
+      date: '05/12/2021'
     },
     {
       status: "A",
       doctor: "Simon",
-      complaint: "Headache"
+      complaint: "Headache",
+      date: '06/12/2021'
     },
     {
       status: "A",
       doctor: "Mary",
-      complaint: "Legs"
+      complaint: "Legs",
+      date: '06/07/2021'
     }
   ]
 };
