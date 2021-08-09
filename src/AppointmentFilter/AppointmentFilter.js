@@ -1,6 +1,9 @@
 import { connect } from "react-redux";
 
 const AppointmentFilter = (props) => {
+  function findClient(e) {
+    alert(e.key)
+  }
   return (
     <div
       className={`${props.isOpened === true ? "opened" : "closed"
@@ -9,7 +12,7 @@ const AppointmentFilter = (props) => {
     >
       <input onChange={props.editStartDate} value={props.startDate} placeholder="start date" type="date" />
       <input onChange={props.editEndDate} value={props.endDate} placeholder="end date" type="date" />
-      <input onChange={props.editClientName} value={props.clientName} placeholder="client" type="text" />
+      <input onKeyPress={findClient} onChange={props.editClientName} value={props.clientName} placeholder="client" type="text" />
       <span>
         <input onClick={props.toggleCheckbox} checked={props.onlyMe} style={{marginRight: '10px'}} type="checkbox" />
         <label>only me</label>
@@ -23,7 +26,8 @@ const mapStateToProps = (state) => {
     onlyMe: state.selectors.filters.onlyMe,
     startDate: state.selectors.filters.startDate,
     endDate: state.selectors.filters.endDate,
-    clientName: state.selectors.filters.clientName
+    clientName: state.selectors.filters.clientName,
+    filtered: state.data.filtered
   };
 };
 const mapDispatchToProps = (dispatch) => {

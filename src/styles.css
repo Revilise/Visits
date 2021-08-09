@@ -26,14 +26,16 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+  align-items: center;
 }
-.header--select {
+.header--selectors > div {
   padding: 10px 5px;
   width: 160px;
   text-align: right;
 }
 .cencel_btn {
   padding: 5px 12px;
+  height: 40px;
 }
 .menu-line-1,
 .menu-line-2,

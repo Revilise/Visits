@@ -1,16 +1,14 @@
 import { connect } from "react-redux";
 import React from "react";
-
-import ComplaintSelector from "./Complaint";
-import DoctorSelector from "./Doctor";
-import StatusSelector from "./Status";
+import Select from "react-select";
 import Cencel from "./Cencel";
 
 class Selectors extends React.Component {
-  filter() {
-    let status = this.props.selectors.selected_status;
-    let doctor = this.props.selectors.selected_doctor;
-    let comp = this.props.selectors.selected_complaint;
+
+  filterData() {
+    let status = this.props.selectors.selected_status.value;
+    let doctor = this.props.selectors.selected_doctor.value;
+    let comp = this.props.selectors.selected_complaint.value;
 
     let arr = this.props.visits
       .filter((elem) => status === "all" || elem.status === status)
@@ -21,26 +19,32 @@ class Selectors extends React.Component {
   }
 
   componentDidMount() {
-    this.filter();
+    this.filterData();
   }
   componentDidUpdate() {
-    this.filter();
+    this.filterData();
   }
 
   render() {
     return (
       <div className="header--selectors">
-        <ComplaintSelector
+        <Select
+          name="ComplaintSelect"
+          value={this.props.selectors.selected_complaint}
           options={this.props.selectors.params.complaint}
-          select={this.props.selectComplaint}
+          onChange={this.props.selectComplaint}
         />
-        <DoctorSelector
+        <Select
+          name="DoctorSelect"
+          value={this.props.selectors.selected_doctor}
           options={this.props.selectors.params.doctor}
-          select={this.props.selectDoctor}
+          onChange={this.props.selectDoctor}
         />
-        <StatusSelector
+        <Select
+          name="StatusSelect"
+          value={this.props.selectors.selected_status}
           options={this.props.selectors.params.status}
-          select={this.props.selectStatus}
+          onChange={this.props.selectStatus}
         />
         <Cencel />
       </div>
@@ -60,17 +64,14 @@ const MapDispatchToProps = (dispatch) => {
     setSelectedData: (array) => {
       dispatch({ type: "set/filtered_data", array });
     },
-    selectStatus: (e) => {
-      let status = e.target.value;
-      dispatch({ type: "select/status", status });
+    selectStatus: (value) => {
+      dispatch({ type: "select/status", status: value });
     },
-    selectDoctor: (e) => {
-      let doctor = e.target.value;
-      dispatch({ type: "select/doctor", doctor });
+    selectDoctor: (value) => {
+      dispatch({ type: "select/doctor", doctor: value });
     },
-    selectComplaint: (e) => {
-      let complaint = e.target.value;
-      dispatch({ type: "select/complaint", complaint });
+    selectComplaint: (value) => {
+      dispatch({ type: "select/complaint", complaint: value });
     }
   };
 };
