@@ -2,22 +2,13 @@
 import BootstrapTable from 'react-bootstrap-table-next'
 
 const Visits = (props) => {
-  // return (
-  //   <table className="visits">
-  //     {props.visits.map((visit) => (
-  //       <Visit
-  //         status={visit.status}
-  //         doctor={visit.doctor}
-  //         complaint={visit.complaint}
-  //       />
-  //     ))}
-  //   </table>
-  // );
+
   const columns = [
-    {dataField: "status", text: "status"},
-    {dataField: "doctor", text: "doctor"},
-    {dataField: "complaint", text: "complaint"},
-    {dataField: "date", text: "date", sort: true},
+    {dataField: "clientName", text: "client", sort: true},
+    {dataField: "complaint", text: "complaint", sort: true},
+    {dataField: "status", text: "status", sort: true},
+    {dataField: "doctor", text: "doctor", sort: true},
+    {dataField: "date", text: "date", sort: true}
   ]
   return (
     <BootstrapTable classes="visits" keyField="id" data={props.visits} columns={columns}/>
