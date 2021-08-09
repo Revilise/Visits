@@ -17,7 +17,7 @@ class Selectors extends React.Component {
       .filter((elem) => doctor === "all" || elem.doctor === doctor)
       .filter((elem) => comp === "all" || elem.complaint === comp);
 
-    this.props.setFilteredData(arr);
+    this.props.setSelectedData(arr);
   }
 
   componentDidMount() {
@@ -57,7 +57,7 @@ const MapStateToProps = (state) => {
 
 const MapDispatchToProps = (dispatch) => {
   return {
-    setFilteredData: (array) => {
+    setSelectedData: (array) => {
       dispatch({ type: "set/filtered_data", array });
     },
     selectStatus: (e) => {

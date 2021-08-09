@@ -1,5 +1,4 @@
 const init = {
-  filtered: [],
   data: [
     {
       status: "A",
@@ -36,7 +35,8 @@ const init = {
       date: '2021-10-16',
       clientName: "Sam"
     }
-  ]
+  ],
+  filtered: []
 };
 
 export default function dataManage(state = init, action) {
