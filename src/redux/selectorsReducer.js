@@ -40,13 +40,13 @@ export default function selectorsReducer(state = init, action) {
   switch (action.type) {
 
     case "edit/start_date":
-      return { ...state, startDate: action.date }
+      return { ...state, filters: {... state.filters, startDate: action.date} }
 
     case "edit/end_date":
-      return { ...state, endDate: action.date }
+      return { ...state, filters: {... state.filters, endDate: action.date} }
 
     case "edit/client_name":
-      return { ...state, clientName: action.name }
+      return { ...state, filters: {... state.filters, clientName: action.name} }
 
     case "toggle/only_me":
       let value = !state.onlyMe

@@ -2,7 +2,9 @@ import { connect } from "react-redux";
 
 const AppointmentFilter = (props) => {
   function findClient(e) {
-    alert(e.key)
+    if (e.key === 'Enter') {
+      alert(e.target.value)
+    }
   }
   return (
     <div
@@ -12,7 +14,7 @@ const AppointmentFilter = (props) => {
     >
       <input onChange={props.editStartDate} value={props.startDate} placeholder="start date" type="date" />
       <input onChange={props.editEndDate} value={props.endDate} placeholder="end date" type="date" />
-      <input onKeyPress={findClient} onChange={props.editClientName} value={props.clientName} placeholder="client" type="text" />
+      <input onChange={props.editClientName} value={props.clientName} placeholder="client" type="text" />
       <span>
         <input onClick={props.toggleCheckbox} checked={props.onlyMe} style={{marginRight: '10px'}} type="checkbox" />
         <label>only me</label>
