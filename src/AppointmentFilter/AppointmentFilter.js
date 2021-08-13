@@ -25,10 +25,10 @@ const AppointmentFilter = (props) => {
 const mapStateToProps = (state) => {
   return {
     isOpened: state.menu.isOpened,
-    onlyMe: state.selectors.filters.onlyMe,
-    startDate: state.selectors.filters.startDate,
-    endDate: state.selectors.filters.endDate,
-    clientName: state.selectors.filters.clientName,
+    onlyMe: state.filters.onlyMe,
+    startDate: state.filters.startDate,
+    endDate: state.filters.endDate,
+    clientName: state.filters.clientName,
     filtered: state.data.filtered
   };
 };

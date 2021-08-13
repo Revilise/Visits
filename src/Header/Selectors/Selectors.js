@@ -9,7 +9,7 @@ class Selectors extends React.Component {
     let status = this.props.selectors.selected_status.value;
     let doctor = this.props.selectors.selected_doctor.value;
     let comp = this.props.selectors.selected_complaint.value;
-    let client = this.props.selectors.filters.clientName;
+    let client = this.props.clientName;
 
     let arr = this.props.visits
       .filter((elem) => status === "all" || elem.status === status)
@@ -57,7 +57,8 @@ class Selectors extends React.Component {
 const MapStateToProps = (state) => {
   return {
     selectors: state.selectors,
-    visits: state.data.data
+    visits: state.data.data,
+    clientName: state.filters.clientName
   };
 };
 

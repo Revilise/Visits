@@ -11,12 +11,6 @@ const Visits = (props) => {
   )
 };
 
-// class VisitsContenter extends React.Component {
-//   render() {
-//     return <Visits visits={this.props.visits} />
-//   }
-// }
-
 const mapStateToProps = (state) => {
   return {
    visits: state.data.filtered,
