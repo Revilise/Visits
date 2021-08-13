@@ -9,7 +9,7 @@ function stringToDate(str) {
 	return "";
 }
 
-export default function filterDat(props) {
+export default function filterData(props) {
 
 	let status = props.selectors.selected_status.value;
 	let doctor = props.selectors.selected_doctor.value;
@@ -26,9 +26,9 @@ export default function filterDat(props) {
 		.filter(elem => client === '' || elem.clientName === client)
 		.filter(elem =>
 				(startDate.length === 0 && endDate.length === 0) ||
-				(stringToDate(elem.date) > startDate && stringToDate(elem.date) < endDate) ||
-				(stringToDate(elem.date) > startDate && endDate === "") ||
-				(stringToDate(elem.date) < endDate && startDate === "")
+				(stringToDate(elem.date) >= startDate && stringToDate(elem.date) <= endDate) ||
+				(stringToDate(elem.date) >= startDate && endDate == "") ||
+				(stringToDate(elem.date) <= endDate && startDate == "")
 		);
 
 	props.setSelectedData(arr);

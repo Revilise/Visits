@@ -146,8 +146,6 @@ const init = {
   currentPage: 1
 };
 
-init.filtered = [...init.data]
-
 export default function dataManage(state = init, action) {
   switch (action.type) {
     case "set/filtered_data":

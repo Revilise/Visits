@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 const Visits = props => {
 
 	let pageNum = Math.ceil(props.visits.length / props.pageSize);
-	const pages = {};
+	const pages = {1: []};
 
 	let k = 0;
 	let j = 1;
