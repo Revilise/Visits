@@ -24,7 +24,11 @@ const Visits = props => {
 	return (
 		<div>
       <div className="pages--container">
-        {pagesElem.map(elem => <span className={`page--elem ${elem == props.currentPage ? 'selected': ""}`} onClick={props.changeCurrentPage} page={elem}>{elem}</span>)}
+        {pagesElem.map(elem => (<span
+				className={`page--elem ${elem == props.currentPage ? 'selected': ""}`}
+				onClick={props.changeCurrentPage}
+				page={elem}>{elem}</span>
+				))}
       </div>
 			<BootstrapTable classes="visits" keyField="id" data={pages[props.currentPage]} columns={props.columns} />
 		</div>
@@ -35,11 +39,11 @@ const mapStateToProps = state => {
 	return {
 		visits: state.data.filtered,
 		columns: [
-			{ dataField: 'clientName', text: 'client', sort: true },
-			{ dataField: 'complaint', text: 'complaint', sort: true },
-			{ dataField: 'status', text: 'status', sort: true },
-			{ dataField: 'doctor', text: 'doctor', sort: true },
-			{ dataField: 'date', text: 'date', sort: true },
+			{dataField: 'clientName', text: 'client', sort: true},
+			{dataField: 'complaint', text: 'complaint', sort: true},
+			{dataField: 'status', text: 'status', sort: true},
+			{dataField: 'doctor', text: 'doctor', sort: true},
+			{dataField: 'date', text: 'date', sort: true},
 		],
 		pageSize: state.data.pageSize,
 		currentPage: state.data.currentPage,

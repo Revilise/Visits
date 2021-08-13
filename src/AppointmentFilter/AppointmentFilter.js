@@ -1,22 +1,22 @@
 import { connect } from "react-redux";
 
-const AppointmentFilter = (props) => {
+function AppointmentFilter(props) {
   return (
     <div
-      className={`${props.isOpened === true ? "opened" : "closed"
-        } filters collapse`}
-      isOpen={props.isOpened}
+      className={`${props.isOpened === true ? "opened" : "closed"} filters collapse`}
+      isopen={props.isOpened}
     >
       <input onChange={props.editStartDate} value={props.startDate} placeholder="start date" type="date" />
       <input onChange={props.editEndDate} value={props.endDate} placeholder="end date" type="date" />
       <input onChange={props.editClientName} value={props.clientName} placeholder="client" type="text" />
       <span>
-        <input onClick={props.toggleCheckbox} checked={props.onlyMe} style={{marginRight: '10px'}} type="checkbox" />
+        <input onClick={props.toggleCheckbox} defaultChecked={props.onlyMe} style={{marginRight: '10px'}} type="checkbox" />
         <label>only me</label>
       </span>
     </div>
   );
 };
+
 const mapStateToProps = (state) => {
   return {
     isOpened: state.menu.isOpened,

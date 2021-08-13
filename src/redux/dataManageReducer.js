@@ -149,7 +149,7 @@ const init = {
 export default function dataManage(state = init, action) {
   switch (action.type) {
     case "set/filtered_data":
-      return { ...state, filtered: action.array };
+      return {...state, filtered: action.array};
 
     case "change/current_page" :
       return {...state, currentPage: action.page}

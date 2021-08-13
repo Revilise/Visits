@@ -18,19 +18,19 @@ class Selectors extends React.Component {
       <div className="header--selectors">
         <Select
           name="ComplaintSelect"
-          value={this.props.selectors.selected_complaint}
+          value={this.props.selectors.SelectedComplaint}
           options={this.props.selectors.params.complaint}
           onChange={this.props.selectComplaint}
         />
         <Select
           name="DoctorSelect"
-          value={this.props.selectors.selected_doctor}
+          value={this.props.selectors.SelectedDoctor}
           options={this.props.selectors.params.doctor}
           onChange={this.props.selectDoctor}
         />
         <Select
           name="StatusSelect"
-          value={this.props.selectors.selected_status}
+          value={this.props.selectors.SelectedStatus}
           options={this.props.selectors.params.status}
           onChange={this.props.selectStatus}
         />
@@ -51,16 +51,16 @@ const MapStateToProps = (state) => {
 const MapDispatchToProps = (dispatch) => {
   return {
     setSelectedData: (array) => {
-      dispatch({ type: "set/filtered_data", array });
+      dispatch({type: "set/filtered_data", array});
     },
     selectStatus: (value) => {
-      dispatch({ type: "select/status", status: value });
+      dispatch({type: "select/status", status: value});
     },
     selectDoctor: (value) => {
-      dispatch({ type: "select/doctor", doctor: value });
+      dispatch({type: "select/doctor", doctor: value});
     },
     selectComplaint: (value) => {
-      dispatch({ type: "select/complaint", complaint: value });
+      dispatch({type: "select/complaint", complaint: value});
     }
   };
 };

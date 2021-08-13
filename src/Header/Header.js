@@ -6,9 +6,7 @@ const Header = (props) => {
       <h1>Visits</h1>
       <div
         onClick={props.toggle}
-        className={`
-        ${props.isOpened === true ? "opened" : "closed"} 
-        header--menu`}
+        className={`${props.isOpened === true ? "opened" : "closed"} header--menu`}
       >
         <span className="menu-line-1" />
         <span className="menu-line-2" />
@@ -26,7 +24,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     toggle: () => {
-      dispatch({ type: "toggle/isOpened" });
+      dispatch({type: "toggle/isOpened"});
     }
   };
 };

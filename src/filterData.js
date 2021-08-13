@@ -6,14 +6,13 @@ function stringToDate(str) {
 
 		return new Date(Number(year), Number(month), Number(day));
 	}
-	return "";
+	return '';
 }
 
 export default function filterData(props) {
-
-	let status = props.selectors.selected_status.value;
-	let doctor = props.selectors.selected_doctor.value;
-	let comp = props.selectors.selected_complaint.value;
+	let status = props.selectors.SelectedStatus.value;
+	let doctor = props.selectors.SelectedDoctor.value;
+	let comp = props.selectors.SelectedComplaint.value;
 	let client = props.filters.clientName;
 
 	let endDate = stringToDate(props.filters.endDate);
@@ -24,11 +23,12 @@ export default function filterData(props) {
 		.filter(elem => doctor === 'all' || elem.doctor === doctor)
 		.filter(elem => comp === 'all' || elem.complaint === comp)
 		.filter(elem => client === '' || elem.clientName === client)
-		.filter(elem =>
+		.filter(
+			elem =>
 				(startDate.length === 0 && endDate.length === 0) ||
 				(stringToDate(elem.date) >= startDate && stringToDate(elem.date) <= endDate) ||
-				(stringToDate(elem.date) >= startDate && endDate == "") ||
-				(stringToDate(elem.date) <= endDate && startDate == "")
+				(stringToDate(elem.date) >= startDate && endDate == '') ||
+				(stringToDate(elem.date) <= endDate && startDate == '')
 		);
 
 	props.setSelectedData(arr);

@@ -1,7 +1,7 @@
 const init = {
-  selected_status: { value: "all", label: "Status" },
-  selected_doctor: { value: "all", label: "Doctor" },
-  selected_complaint: { value: "all", label: "Complaint" },
+  SelectedStatus: {value: "all", label: "Status"},
+  SelectedDoctor: {value: "all", label: "Doctor"},
+  SelectedComplaint: {value: "all", label: "Complaint"},
   params: {
     status: [
       { value: "all", label: "Status" },
@@ -34,27 +34,27 @@ export default function selectorsReducer(state = init, action) {
     case "select/clear":
       return {
         ...state,
-        selected_status: { value: "all", label: "Status" },
-        selected_doctor: { value: "all", label: "Doctor" },
-        selected_complaint: { value: "all", label: "Complaint" },
+        SelectedStatus: {value: "all", label: "Status"},
+        SelectedDoctor: {value: "all", label: "Doctor"},
+        SelectedComplaint: {value: "all", label: "Complaint"},
       };
 
     case "select/status":
       return {
         ...state,
-        selected_status: action.status
+        SelectedStatus: action.status
       };
 
     case "select/doctor":
       return {
         ...state,
-        selected_doctor: action.doctor
+        SelectedDoctor: action.doctor
       };
 
     case "select/complaint":
       return {
         ...state,
-        selected_complaint: action.complaint
+        SelectedComplaint: action.complaint
       };
 
     default:

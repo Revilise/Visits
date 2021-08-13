@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-const Cencel = (props) => {
+function Cencel(props) {
   return (
     <button onClick={props.clearSelect} className="cencel_btn">
       <svg
@@ -28,6 +28,7 @@ const Cencel = (props) => {
     </button>
   );
 };
+
 const MapStateToProps = (state) => {
   return {};
 };
@@ -38,4 +39,5 @@ const MapDispatchToProps = (dispatch) => {
     }
   };
 };
+
 export default connect(MapStateToProps, MapDispatchToProps)(Cencel);
