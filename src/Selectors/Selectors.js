@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
 import React from "react";
 import Select from "react-select";
-import Cencel from "./Cencel";
-import filterData from './filterData'
+import Cencel from "../Cencel/Cencel";
+import filterData from '../filterData'
 
 class Selectors extends React.Component {
 
