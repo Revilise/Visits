@@ -2,29 +2,15 @@ import { connect } from "react-redux";
 import React from "react";
 import Select from "react-select";
 import Cencel from "./Cencel";
+import filterData from './filterData'
 
 class Selectors extends React.Component {
 
-  filterData() {
-    let status = this.props.selectors.selected_status.value;
-    let doctor = this.props.selectors.selected_doctor.value;
-    let comp = this.props.selectors.selected_complaint.value;
-    let client = this.props.clientName;
-
-    let arr = this.props.visits
-      .filter((elem) => status === "all" || elem.status === status)
-      .filter((elem) => doctor === "all" || elem.doctor === doctor)
-      .filter((elem) => comp === "all" || elem.complaint === comp)
-      .filter((elem) => client === "" || elem.clientName === client)
-
-    this.props.setSelectedData(arr);
-  }
-
   componentDidMount() {
-    this.filterData();
+    filterData(this.props);
   }
   componentDidUpdate() {
-    this.filterData();
+    filterData(this.props);
   }
 
   render() {
@@ -58,7 +44,7 @@ const MapStateToProps = (state) => {
   return {
     selectors: state.selectors,
     visits: state.data.data,
-    clientName: state.filters.clientName
+    filters: state.filters
   };
 };
 

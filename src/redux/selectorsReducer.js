@@ -37,7 +37,7 @@ export default function selectorsReducer(state = init, action) {
         ...state,
         selected_status: { value: "all", label: "Status" },
         selected_doctor: { value: "all", label: "Doctor" },
-        selected_complaint: { value: "all", label: "Complaint" },
+        selected_complaint: { value: "all", label: "Complaint" }, 
       };
 
     case "select/status":

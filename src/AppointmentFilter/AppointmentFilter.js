@@ -1,11 +1,6 @@
 import { connect } from "react-redux";
 
 const AppointmentFilter = (props) => {
-  function findClient(e) {
-    if (e.key === 'Enter') {
-      alert(e.target.value)
-    }
-  }
   return (
     <div
       className={`${props.isOpened === true ? "opened" : "closed"
