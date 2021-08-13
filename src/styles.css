@@ -88,6 +88,13 @@
   padding: 8px;
   width: 130px;
   margin-right: 10px;
+  border: hsl(0, 0%, 80%) 1px solid;
+  border-radius: 4px;
+  outline: none;
+}
+.filters > input:focus {
+  border: #2684FF 2px solid;
+
 }
 .collapse {
   transition: height 0.3s ease;
@@ -99,4 +106,17 @@
 .closed.collapse {
   height: 0;
   overflow: hidden;
+}
+
+.pages--container {
+  width: fit-content;
+  margin: 11px auto;
+}
+.page--elem {
+  cursor:pointer;
+  margin: 0 4px;
+}
+.page--elem.selected {
+  color: #2684FF;
+  font-weight: 600;
 }

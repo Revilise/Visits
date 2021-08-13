@@ -21,10 +21,10 @@ const init = {
     ],
     complaint: [
       { value: "all", label: "Complaint" },
-      { value: "Legs", label: "Legs" },
+      { value: "Cold", label: "Cold" },
       { value: "Headache", label: "Headache" },
-      { value: "Travm", label: "Travm" },
-      { value: "Teeth", label: "Teeth" }
+      { value: "Earache", label: "Earache" },
+      { value: "Rash", label: "Rash" }
     ]
   }
 };
@@ -38,7 +38,7 @@ export default function selectorsReducer(state = init, action) {
         selected_doctor: { value: "all", label: "Doctor" },
         selected_complaint: { value: "all", label: "Complaint" },
       };
-      
+
     case "select/status":
       return {
         ...state,

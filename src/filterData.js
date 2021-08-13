@@ -10,6 +10,7 @@ function stringToDate(str) {
 }
 
 export default function filterDat(props) {
+
 	let status = props.selectors.selected_status.value;
 	let doctor = props.selectors.selected_doctor.value;
 	let comp = props.selectors.selected_complaint.value;
